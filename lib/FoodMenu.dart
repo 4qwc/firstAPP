@@ -1,0 +1,8 @@
+// สร้างคลาส FoodMenu
+class FoodMenu {
+  String name;
+  String price;
+  String img;
+
+  FoodMenu(this.name, this.price, this.img);
+}
