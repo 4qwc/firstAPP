@@ -1,0 +1,52 @@
+
+note
+// mainAxisAlignment: MainAxisAlignment.start,
+    // children: getData(25),
+    /*[
+          SizedBox(
+            height: 50,
+          ),
+          Image.asset(
+            'assets/logo.png', //ใส่รูปภาพ
+            //width: 200,
+          ),
+          Text(
+            "สวัสดีชาวโลก",
+            style: TextStyle(
+                fontFamily: 'pimthai', fontSize: 50, color: Colors.red[900]),
+          ),
+          Text(
+            number.toString(),
+            style: TextStyle(
+                fontFamily: 'pimthai', fontSize: 100, color: Colors.red[900]),
+          ),
+          
+        ],
+        */
+
+    /*
+    // เตรียมข้อมูล แบบกำหนด ตัวเลขได้
+    List<Widget> getData(int count) {
+      // กลุ่มข้อมูล
+      List<Widget> data = [];
+      for (var i = 0; i < count; i++) {
+        var menu = ListTile(
+          title: Text(
+            "เมนูที่ ${i + 1}",
+            style: TextStyle(fontSize: 25),
+          ),
+          subtitle: Text(" รายการสินค้าที่ : ${i + 1}"),
+        );
+        data.add(menu);
+      }
+      return data;
+    }
+
+    void addNumber() {
+      setState(() {
+        // ให้นำคำสั่งมาใส่ที่จะให้ทำงาน
+        number++; // กำหนดให้ตัวเลข ++
+      });
+    }
+  }
+  */
