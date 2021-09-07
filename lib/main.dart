@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'FoodMenu.dart';
+import 'BoxData.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Hello Flutter',
       home: MyHomePage(title: 'MyApp'),
-      theme: ThemeData(primarySwatch: Colors.pink),
+      theme: ThemeData(primarySwatch: Colors.green),
     );
   }
 }
@@ -28,57 +28,34 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var number = 0;
-
-  // กลุ่มข้อมูล โดยใช้ FoodMenu.dart
-  List<FoodMenu> menu = [
-    FoodMenu("กุ้งเผา", "500", "assets/images/picture1.jpg"),
-    FoodMenu("ข้าวผัด", "100", "assets/images/picture2.jpg"),
-    FoodMenu("ต้มยำรวมมิตร", "500", "assets/images/picture3.jpg"),
-    FoodMenu("ผัดคะน้าหมูกรอบ", "100", "assets/images/picture4.jpg"),
-  ];
-
   @override
   Widget build(BuildContext context) {
-    // การเพิ่มกลุ่มข้อมูล text widget
-    List<Widget> data = [];
+    // การเพิ่มกลุ่มข้อมูล  widget
 
-    for (var i = 0; i < 10; i++) {
-      data.add(Text(
-        "รายการสินค้าที่: ${i + 1} ",
-        style: TextStyle(fontSize: 30),
-      ));
-    }
-
-    //#################
-    return Container(
-      margin: EdgeInsets.only(top: 20),
-      padding: EdgeInsets.all(20),
-      height: 200,
-      child: Scaffold(
-          appBar: AppBar(
-            title: Text("เลือกเมนูอาหาร"),
-          ),
-
-          // ชุดคำสั่งแสดงรายการเมนู
-          // แสดงผลข้อมูล
-          body: ListView.builder(
-              itemCount: menu.length, //คำสั่งระบุจำนวนเมนู มาจาก menu.length
-              itemBuilder: (BuildContext context, int index) {
-                FoodMenu food = menu[index];
-                return ListTile(
-                  leading: Image.asset(food.img), // คำสั่งนำภาพมาแสดง
-                  title: Text(
-                    food.name,
-                    style: TextStyle(fontSize: 25),
-                  ),
-                  subtitle: Text("ราคา " + food.price + "บาท"),
-                  // เพิ่ม อีเว้นเมื่อกดเมนูอาหาร
-                  onTap: () {
-                    print("คุณเลือกเมนูอาหารชื่อว่า: " + food.name);
-                  },
-                );
-              })),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("บัญชีของฉัน"),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            BoxData("ยอดคงเหลือ", 12500000.55, Colors.lightBlue, 150),
+            SizedBox(
+              height: 5,
+            ),
+            BoxData("รายรับ", 25000.25, Colors.green, 100),
+            SizedBox(
+              height: 5,
+            ),
+            BoxData("รายจ่าย", 10000.77, Colors.red, 100),
+            SizedBox(
+              height: 5,
+            ),
+            BoxData("ค้างชำระ", 10000.99, Colors.orange, 100),
+          ],
+        ),
+      ),
     );
   }
 }
